@@ -3,7 +3,7 @@
 Docker image for curator_cli.
 
 ```
-docker run --rm ricc/curator-cli:0.1.0 --help
+docker run --rm nqkdev/curator-cli:4.3.1 --help
 ```
 
 https://www.elastic.co/guide/en/elasticsearch/client/curator/current/singleton-cli.html
@@ -25,5 +25,5 @@ docker service create --name docker-curator \
       --mode global \
       --restart-delay 86400s \
       --restart-max-attempts 3650 \
-      ricc/curator-cli:0.1.0  --use_ssl --host "https://myelasticsearch" delete_indices --filter_list '[{"filtertype":"age","source":"creation_date","direction":"older","unit":"days","unit_count":1},{"filtertype":"pattern","kind":"prefix","value":"logstash-alert","exclude":"True"}]'
+      nqkdev/curator-cli:4.3.1  --use_ssl --host "https://myelasticsearch" delete_indices --filter_list '[{"filtertype":"age","source":"creation_date","direction":"older","unit":"days","unit_count":1},{"filtertype":"pattern","kind":"prefix","value":"logstash-alert","exclude":"True"}]'
 ```
